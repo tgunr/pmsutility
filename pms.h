@@ -30,3 +30,4 @@ void _PMERR(const char *file, const char *function, int err, NSString * format, 
 #define PMLOG(...) _PMLOG(__FILE__, __PRETTY_FUNCTION__, __VA_ARGS__)
 #define PMERR(err, ...) if (err) _PMERR(__FILE__, __PRETTY_FUNCTION__, (int)err, __VA_ARGS__)
 #define PMSYM(symbol) PMLOG(1, @#symbol ": %@", symbol)
+#define RELEASENIL(var) [var release]; var = 0;
