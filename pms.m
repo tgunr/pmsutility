@@ -12,14 +12,12 @@
 #include <stdarg.h>
 #include <sys/time.h>
 #include <CoreServices/CoreServices.h>
-#include "pms.h"
+#import "pms.h"
 
 #ifdef PMDEBUG
-Boolean			gVerbose = TRUE;
-int				gDebugLevel = 7;
+int				gDebugLevel = 0;
 #else
-Boolean			gVerbose = FALSE;
-int				gDebugLevel = 2;
+int				gDebugLevel = 7;
 #endif
 
 int				gVerboseIndex = 0;
@@ -27,24 +25,24 @@ Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
 
 // PMLOGSetVerbose sets a new debug level
-void PMLOGSetVerbose(Boolean value) { gVerbose = value; }
+void PMLOGSetVerbose(Boolean value) { gDebugLevel = value; }
 
 // PMLOGPushVerbose sets a new debug setting and saves the previous one
 // Use this to reduce debug output inside loops etc.
 void PMLOGPushVerbose(Boolean value) {
-	gVerboseStack[gVerboseIndex] = gVerbose;
-	gVerboseIndex += 1;
+	gVerboseStack[gVerboseIndex] = gDebugLevel;
+	gVerboseIndex++;
 	if (gVerboseIndex > 256)
 		gVerboseIndex = 256;
-	gVerbose = value;
+	gDebugLevel = value;
 }
 
 // PMLOGPopVerbose restores the previous debug setting
 void PMLOGPopVerbose() {
-	gVerboseIndex -= 1;
-	gVerbose = gVerboseStack[gVerboseIndex];
+	gVerboseIndex--;
 	if (gVerboseIndex < 0)
 		gVerboseIndex = 0;
+	gDebugLevel = gVerboseStack[gVerboseIndex];
 }
 
 // Old C style logging
@@ -57,7 +55,7 @@ void PM_LogInternal(const char *file, const char *function, int inLevel, char *f
 	
 	struct timeval theTime;
 	
-    if( inLevel > gDebugLevel )
+    if( inLevel > gDebugLevel || inLevel == 0 )
     {
         // The level is not high enough to be displayed, we're skipping this item.
         return;
@@ -143,9 +141,12 @@ void _PMLOGSELF(id self, NSString * format, ...)
 
 void _PMLOG(const char *file, const char *function,  int inLevel, NSString * format, ...)
 {
-    if( inLevel > gDebugLevel )
+    if( inLevel > gDebugLevel || inLevel == 0 )
     {
 		// The level is not high enough to be displayed, we're skipping this item.
+		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
+		// gDebugLevel = 1 = least verbose PMLOG(1, @"Routine log");
+		// gDebugLevel = 7 = most verbose  PMLOG(5, @"Really detailed debug level");
         return;
     }
     else
