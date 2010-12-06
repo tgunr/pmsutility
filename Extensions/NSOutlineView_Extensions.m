@@ -46,7 +46,7 @@
     // check if current row is out of range
     if ((curRow < -1) || (curRow >= numRows))
     {
-        return NSNotFound;
+        return (int)NSNotFound;
     }
     
     nextRow = curRow + 1;
@@ -58,7 +58,7 @@
         }
         else
         {
-            return NSNotFound;
+            return (int)NSNotFound;
         }
     }
  
@@ -70,11 +70,12 @@
  
 - (int) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag
 {
-    int nextSelRow;
+    NSUInteger nextSelRow;
     NSIndexSet *selRowIndexes = nil;
     
     selRowIndexes = [self selectedRowIndexes];
-    if (nil == selRowIndexes) return NSNotFound;
+    if (nil == selRowIndexes) 
+		return (int)NSNotFound;
  
     // if current selected row is bogus, return
     // the first selected row in the list
@@ -89,7 +90,7 @@
         if (YES == wrapFlag)
             return ([selRowIndexes firstIndex]);
         else
-            return NSNotFound;
+            return (int)NSNotFound;
     }
     
     return(nextSelRow);
@@ -100,7 +101,8 @@
 {
     NSIndexSet *selRowIndexes = [self selectedRowIndexes];
  
-    if (nil == selRowIndexes) return NSNotFound;
+    if (nil == selRowIndexes) 
+		return (int)NSNotFound;
  
     return([selRowIndexes lastIndex]);
 }
@@ -109,7 +111,8 @@
 - (int) firstSelectedRow
 {
     NSIndexSet *selRowIndexes = [self selectedRowIndexes];
-    if (nil == selRowIndexes) return NSNotFound;
+    if (nil == selRowIndexes) 
+		return (int)NSNotFound;
  
     return([selRowIndexes firstIndex]);
 }
