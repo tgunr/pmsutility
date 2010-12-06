@@ -9,6 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 
+@interface PMUtility : NSObject {
+	
+}
+
+@end
+
 BOOL			BooleanToBOOL		(Boolean		inBoolean);
 Boolean			BOOLToBoolean		(BOOL			inBool);
 CFBooleanRef	BooleanToCFBoolean	(Boolean		inBoolean);
