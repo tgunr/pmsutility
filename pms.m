@@ -16,7 +16,9 @@
 
 #ifdef PMDEBUG
 int				gDebugLevel = 0;
+Boolean			gVerbose = TRUE;
 #else
+Boolean			gVerbose = FALSE;
 int				gDebugLevel = 7;
 #endif
 
