@@ -16,9 +16,7 @@
 
 #ifdef PMDEBUG
 int				gDebugLevel = 0;
-Boolean			gVerbose = TRUE;
 #else
-Boolean			gVerbose = FALSE;
 int				gDebugLevel = 7;
 #endif
 
@@ -139,6 +137,27 @@ void _PMLOGSELF(id self, NSString * format, ...)
 	va_start(ap, format);
 	NSLogv(finalFormat, ap);
 	va_end(ap);
+}
+
+void _PMMSG(const char *function,  int inLevel, NSString * format, ...)
+{
+    if( inLevel > gDebugLevel || inLevel == 0 )
+    {
+		// The level is not high enough to be displayed, we're skipping this item.
+		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
+		// gDebugLevel = 1 = least verbose PMLOG(1, @"Routine log");
+		// gDebugLevel = 7 = most verbose  PMLOG(5, @"Really detailed debug level");
+        return;
+    }
+    else
+    {
+        NSString *		finalFormat =  [NSString stringWithFormat:@"PMLOG: %s: %@", function, format];
+        
+        va_list ap;
+        va_start(ap, format);
+        NSLogv(finalFormat, ap);
+        va_end(ap);
+    }
 }
 
 void _PMLOG(const char *file, const char *function,  int inLevel, NSString * format, ...)

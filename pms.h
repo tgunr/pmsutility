@@ -25,6 +25,7 @@ NSLog(logstring, __PRETTY_FUNCTION__); \
 void _PMLOGSELF(id self, NSString * format, ...);
 void _PMLOG(const char *file, const char *function, int inLevel, NSString * format, ...);
 void _PMERR(const char *file, const char *function, int err, NSString * format, ...);
+void _PMMSG(const char *function,  int inLevel, NSString * format, ...);
 
 //#define PMLOG(ARGS...) PM_LogInternal(__FILE__, __PRETTY_FUNCTION__, ## ARGS)
 #define PMLOG(...) _PMLOG(__FILE__, __PRETTY_FUNCTION__, __VA_ARGS__)
@@ -32,4 +33,8 @@ void _PMERR(const char *file, const char *function, int err, NSString * format, 
 #define PMSYM(symbol) PMLOG(1, @#symbol ": %@", symbol)
 #define PMNOTE(note) PMLOG(1, note)
 #define PMHERE PMLOG(1, @"")
+#define PMMSG(...) _PMMSG(__PRETTY_FUNCTION__, __VA_ARGS__)
+
 #define RELEASENIL(var) [var release]; var = 0;
+
+void PMLOGSetVerbose(Boolean value);
