@@ -79,3 +79,62 @@
 }
 
 @end
+
+@implementation NSString (TruncateToWidth)
+
+#define ellipsis @"…"
+
+- (NSString*)stringByTruncatingBeginningToLength:(NSUInteger)length;
+{
+	// Create copy that will be the returned result
+	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+	NSUInteger selfLength = [self length];
+	
+	// Make sure string is longer than requested length
+	if (selfLength > length)
+	{
+		// Get range for prefix characters in string
+		NSRange range = {0, ((selfLength - length) +1)};
+		[truncatedString replaceCharactersInRange:range withString:ellipsis];
+	}
+	
+	return truncatedString;
+}
+
+- (NSString*)stringByTruncatingEndToLength:(NSUInteger)length;
+{
+	// Create copy that will be the returned result
+	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+	NSUInteger selfLength = [self length];
+
+	// Make sure string is longer than requested length
+	if (selfLength > length)
+	{
+		// Get range for last characters in string
+		NSRange range = {length - 1, ((selfLength - length) + 1)};
+		[truncatedString replaceCharactersInRange:range withString:ellipsis];
+	}
+	
+	return truncatedString;
+}
+
+- (NSString*)stringByTruncatingMiddleToLength:(NSUInteger)length
+{
+	// Create copy that will be the returned result
+	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+	NSUInteger selfLength = [self length];
+	if (selfLength > length) {
+		NSRange r;		
+		// compute the ends length
+		NSUInteger middle = selfLength / 2;
+		NSUInteger ends = ((selfLength - length) / 2);
+		// set range to middle
+		r.location = (middle - ends);
+		r.length = (((middle + ends) - r.location) + 1);
+		[truncatedString replaceCharactersInRange:r withString:ellipsis];
+	}	
+	return truncatedString;
+}
+
+@end
+

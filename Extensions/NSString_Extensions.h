@@ -19,3 +19,11 @@
 +(NSString*)stringFromByteCount:(NSNumber*)inBytes;
 
 @end
+
+@interface NSString (TruncateToWidth)
+
+- (NSString*)stringByTruncatingBeginningToLength:(NSUInteger)length;
+- (NSString*)stringByTruncatingEndToLength:(NSUInteger)length;
+- (NSString*)stringByTruncatingMiddleToLength:(NSUInteger)length;
+
+@end
