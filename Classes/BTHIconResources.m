@@ -23,7 +23,7 @@
 
 - (RGBColor) approximateRGBColor {
 	RGBColor result;
-	float resultingRed, resultingGreen, resultingBlue;
+	CGFloat resultingRed, resultingGreen, resultingBlue;
 	NSColor * calibratedColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 	[calibratedColor getRed:&resultingRed green:&resultingGreen blue:&resultingBlue alpha:NULL];
 

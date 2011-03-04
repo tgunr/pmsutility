@@ -56,15 +56,21 @@
 @interface NSWorkspace (CarbonIcons)
 - (NSImage *)iconForCreator:(NSString *)creator Type: (NSString *)iconType;
 
+- (NSImage *)iconForCreator:(NSString *)creator Type: (NSString *)iconType
+					  style: (IconTransformType) transformation tinting: (NSColor *) customTint;
+
 //- (NSImage *)iconForCreator:(NSString *)creator Type: (NSString *)iconType
 //		style: (IconTransformType) transformation tinting: (NSColor *) customTint
 //		badge: (NSString *)badgeType;
 
 - (NSImage *)iconForMIME:(NSString *)mimetype;
 
+- (NSImage *)iconForMIME:(NSString *)mimetype
+				   style: (IconTransformType) transformation tinting: (NSColor *) customTint;
+
 //- (NSImage *)iconForMIME:(NSString *)mimetype
-//		style: (IconTransformType) transformation tinting: (NSColor *) customTint
-//		badge: (NSString *)badgeType;
+//				   style: (IconTransformType) transformation tinting: (NSColor *) customTint
+//				   badge: (NSString *)badgeType;
 
 @end
 

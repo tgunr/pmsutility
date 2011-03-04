@@ -2,7 +2,7 @@
  *  pmsCFUtility.h
  *  PickADisc
  *
- *  Created by Jack Small on 7/16/08.
+ *  Created by PolyMicro Systems on 7/16/08.
  *  Copyright 2008 Polymicrosystems. All rights reserved.
  *
  */
