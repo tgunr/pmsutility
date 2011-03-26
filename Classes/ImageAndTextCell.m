@@ -14,7 +14,7 @@
 @implementation ImageAndTextCell
 
 - (id)init {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         [self setLineBreakMode:NSLineBreakByTruncatingTail];
         [self setSelectable:YES];
 		busyCount = 0;
@@ -135,7 +135,7 @@
 		
 		arrowInfo.version = 0;
 		arrowInfo.state = kThemeStateActive;
-		arrowInfo.index = jPMBusyBodyBeat;				// There is only one busy counter, so we're all spinning together.
+		//		arrowInfo.index = jPMBusyBodyBeat;				// There is only one busy counter, so we're all spinning together.
 
 		HIThemeDrawChasingArrows( &arrowFrame, &arrowInfo, [[NSGraphicsContext currentContext] graphicsPort], kHIThemeOrientationInverted );
 	}
