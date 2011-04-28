@@ -19,7 +19,7 @@ int				gDebugLevel = 0;
 #else
 int				gDebugLevel = 7;
 #endif
-
+Boolean			gVerbose = TRUE;
 int				gVerboseIndex = 0;
 Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
