@@ -38,3 +38,5 @@ void _PMMSG(const char *function,  int inLevel, NSString * format, ...);
 #define RELEASENIL(var) [var release]; var = 0;
 
 void PMLOGSetVerbose(Boolean value);
+void PMLOGPushVerbose(Boolean value);
+void PMLOGPopVerbose();
