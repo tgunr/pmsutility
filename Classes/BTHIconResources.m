@@ -102,8 +102,6 @@
 {
 	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
 	unsigned int iconSizesToMake = 128; //A bitflag that has the set bits correspond to the size.
-	BOOL iconAdded = NO;
-	OSStatus err;
 
 	AcquireIconRef(icon);
 	
@@ -248,19 +246,19 @@ OSStatus GetIconRefFromUTI(CFStringRef typeIdent, IconRef * outIconRef){
 	if (iconRefFromUTIDict == nil){
 		iconRefFromUTIDict = [[NSMutableDictionary alloc] init];
 	} else {
-		NSData * cachedResult = [iconRefFromUTIDict objectForKey:typeIdent];
+		NSData * cachedResult = [iconRefFromUTIDict objectForKey: (id)typeIdent];
 		if (cachedResult != nil) {
 			[cachedResult getBytes:outIconRef];
 			AcquireIconRef(*outIconRef);
 			return noErr;
 		}
 	}
-	NSString * ourFileExtension = nil;
+	CFStringRef ourFileExtension = nil;
 	OSType ourCreator = 0;
 	OSType ourType = 0;
-	NSString * ourMimeType = nil;
+	CFStringRef ourMimeType = nil;
 
-	if ([(NSString*)typeIdent isEqualTo:kUTTypeFolder]){//IF Folder:
+	if ( CFStringCompare(typeIdent, kUTTypeFolder, kCFCompareCaseInsensitive) == kCFCompareEqualTo ){ //IF Folder:
 		ourCreator = kSystemIconsCreator;
 		ourType = kGenericFolderIcon;
 	} else {//Not a folder
@@ -276,13 +274,13 @@ OSStatus GetIconRefFromUTI(CFStringRef typeIdent, IconRef * outIconRef){
 	}
 
 	err = GetIconRefFromTypeInfo(ourCreator, ourType, (CFStringRef)ourFileExtension, (CFStringRef)ourMimeType, kIconServicesNormalUsageFlag, outIconRef);
-	if (err = noErr) {
+	if (err == noErr) {
 		AcquireIconRef(*outIconRef);
 		NSData * cachedResult = [NSData dataWithBytes:outIconRef length:sizeof(IconRef)];
-		[iconRefFromUTIDict setObject:cachedResult forKey:typeIdent];
+		[iconRefFromUTIDict setObject:cachedResult forKey: (id)typeIdent];
 	}
-	[ourMimeType release];
-	[ourFileExtension release];
+	CFRelease(ourMimeType);
+	CFRelease(ourFileExtension);
 	return err;
 }
 
