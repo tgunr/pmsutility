@@ -12,10 +12,10 @@
  
 - (NSArray*)allSelectedItems;
 - (void)selectItems:(NSArray*)items byExtendingSelection:(BOOL)extend;
-- (int) lastSelectedRow;
-- (int) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag;
-- (int) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag;
-- (int) firstSelectedRow;
+- (unsigned long) lastSelectedRow;
+- (unsigned long) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag;
+- (unsigned long) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag;
+- (unsigned long) firstSelectedRow;
  
 @end
  

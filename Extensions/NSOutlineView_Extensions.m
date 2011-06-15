@@ -29,8 +29,9 @@
     unsigned int i;
     if (extend==NO) [self deselectAll:nil];
     for (i=0;i<[items count];i++) {
-        int row = [self rowForItem:[items objectAtIndex:i]];
-        if(row>=0) [self selectRow: row byExtendingSelection:YES];
+        NSInteger row = [self rowForItem:[items objectAtIndex:i]];
+        if(row>=0) 
+			[self selectRow: row byExtendingSelection:YES];
     }
 }
  
@@ -38,10 +39,10 @@
 // wrap around to the beginning of the list
 // if specified
  
-- (int) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag
+- (unsigned long) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag
 {
-    int numRows = [self numberOfRows];
-    int nextRow;
+    unsigned long numRows = [self numberOfRows];
+    unsigned long nextRow;
     
     // check if current row is out of range
     if ((curRow < -1) || (curRow >= numRows))
@@ -68,7 +69,7 @@
 // given a row value, get the next selected row, and
 // wrap around to the beginning of the list if specified
  
-- (int) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag
+- (unsigned long) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag
 {
     NSUInteger nextSelRow;
     NSIndexSet *selRowIndexes = nil;
@@ -97,7 +98,7 @@
 }
  
 // get the last selected row
-- (int) lastSelectedRow
+- (unsigned long) lastSelectedRow
 {
     NSIndexSet *selRowIndexes = [self selectedRowIndexes];
  
@@ -108,7 +109,7 @@
 }
  
 // get the first selected row
-- (int) firstSelectedRow
+- (unsigned long) firstSelectedRow
 {
     NSIndexSet *selRowIndexes = [self selectedRowIndexes];
     if (nil == selRowIndexes) 
