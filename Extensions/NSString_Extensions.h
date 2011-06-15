@@ -25,3 +25,7 @@
 - (NSString*)stringByTruncatingMiddleToLength:(NSUInteger)length;
 
 @end
+
+@interface NSMutableString(PMExtensions)
+-(NSString*)md5String;
+@end
