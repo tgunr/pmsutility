@@ -148,7 +148,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 	BOOL
 	  stopOnTickValue = NO;
 	  
-	if (oldTimer = [timers objectForKey:dictKey])
+	if ((oldTimer = [timers objectForKey:dictKey]))
 	  {
 		stopOnTickValue = [[[oldTimer userInfo] valueForKey:stopOnTicksKey] boolValue];
 		[oldTimer invalidate];  // If there already was a timer, clean it up.
