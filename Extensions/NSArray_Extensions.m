@@ -43,6 +43,9 @@
 */
 
 #import "NSArray_Extensions.h"
+#import "NSString_Extensions.h"
+#import "pmsCFUtility.h"
+#import "pmsNSUtility.h"
 
 @implementation NSArray (MyExtensions)
 
@@ -98,7 +101,7 @@
 	
 	if( workArray != nil )
 	{
-		while ( workPath = (NSString*)[workEnum nextObject] ) {
+		while ( (workPath = (NSString*)[workEnum nextObject]) ) {
 			workURL = [NSURL fileURLWithPath:workPath];
 			if( workURL != nil )
 				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (CFURLRef)workURL, (CFArrayRef)theUTIs, NULL ) )
@@ -134,7 +137,7 @@
 	id					infoItem = nil;
 	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
 	
-	while ( infoItem = [infoEnum nextObject] ) 
+	while ( (infoItem = [infoEnum nextObject]) ) 
 		[infoString appendString:[infoItem md5String]];
 	
 	return [infoString md5String];
@@ -149,7 +152,7 @@
 	id				entry = nil;
 	NSEnumerator*	enumerator = [array objectEnumerator];
 	
-	while ( entry = [enumerator nextObject] ) 
+	while ( (entry = [enumerator nextObject]) ) 
 		[self insertObject:entry atIndex:index++];
 }
 
@@ -169,7 +172,7 @@
 	NSEnumerator*	newEnum = [newArray objectEnumerator];
 	id				newItem = nil;
 	
-	while ( newItem = [newEnum nextObject] )
+	while ( (newItem = [newEnum nextObject]) )
 		if( [self indexOfObject:newItem] == NSNotFound )
 			[self insertObject:newItem atIndex:index++];
 	
@@ -190,7 +193,7 @@
 	id					infoItem = nil;
 	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
 	
-	while ( infoKey = [infoEnum nextObject] ) {
+	while ( (infoKey = [infoEnum nextObject]) ) {
 		infoItem = [self objectForKey:infoKey];
 		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
 			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
