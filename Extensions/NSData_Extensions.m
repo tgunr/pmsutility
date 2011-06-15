@@ -7,6 +7,7 @@
 //
 
 #import "NSData_Extensions.h"
+#import "pmsCFUtility.h"
 #include <openssl/evp.h>
 #include <openssl/err.h>
 
@@ -20,7 +21,7 @@
 {
 	NSString*		outString = nil;
 	const char*		myBytes = [self bytes];
-	unsigned int	myLength = [self length];
+	NSUInteger		myLength = [self length];
 	unsigned int	myIndex;
 	char*			hexChars = NULL;
 	
