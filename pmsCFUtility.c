@@ -1,6 +1,5 @@
 /*
  *  pmsCFUtility.c
- *  PickADisc
  *
  *  Created by PolyMicro Systems on 7/16/08.
  *  Copyright 2008 polyMicro Systems. All rights reserved.
@@ -362,7 +361,7 @@ CFStringRef		CFStringCreateFromCommandPipe( CFAllocatorRef inAllocator, CFURLRef
 	char*			doCommand = NULL;
 	char*			utf8Name = NULL;
 	FILE*			pipe;
-	int				pipeSize = 8192;
+	size_t			pipeSize = 8192;
 	
 	
 	if( inAllocator == NULL ) inAllocator = kCFAllocatorDefault;
@@ -527,7 +526,7 @@ CFStringRef	CFURLCopyUTI( CFAllocatorRef inAllocator, CFURLRef inURL, OSStatus*	
 	OSStatus			theErr;
 	
 	
-	theErr = LSCopyItemInfoForURL( inURL, kLSRequestExtension || kLSRequestTypeCreator, &theInfo );
+	theErr = LSCopyItemInfoForURL( inURL, kLSRequestExtension | kLSRequestTypeCreator, &theInfo );
 	if( theErr != 0 ) goto BAIL;
 	
 	if( theInfo.extension != NULL )
@@ -647,7 +646,7 @@ CFStringRef	CFDataCreateHexString( CFAllocatorRef inAllocator, CFDataRef inData 
 	
 	CFStringRef			outString = NULL;
 	const UInt8*		myBytes = CFDataGetBytePtr( inData );
-	unsigned int		myLength = CFDataGetLength( inData );
+	CFIndex				myLength = CFDataGetLength( inData );
 	unsigned int		myIndex;
 	CFMutableStringRef	workString = CFStringCreateMutable( inAllocator, myLength*2+1 );
 	
@@ -679,7 +678,7 @@ CFDataRef	CFStringCreateDataForHex( CFAllocatorRef inAllocator, CFStringRef inHe
 		indexRange.length = 2;
 		indexRange.location = myIndex * 2;
 		CFStringGetCharacters( inHexString, indexRange, workValue );
-		if( sscanf( (const char*)workValue, "%02x", &workResult ) == 1 );
+		if( sscanf( (const char*)workValue, "%02x", &workResult ) == 1 )
 			CFDataAppendBytes( workData, (const UInt8*)&workResult, 1 );
 	}
 	
