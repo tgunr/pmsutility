@@ -5,7 +5,7 @@
 //  Copyright 2008 PolyMicro Systems. All rights reserved.
 //
 
-#import "NSApplication_Extensions.h"
+#import <PMSUtility/NSApplication_Extensions.h>
 #import "pmsCFUtility.h"
 
 /*
