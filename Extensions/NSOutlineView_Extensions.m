@@ -8,33 +8,43 @@
 #import "NSOutlineView_Extensions.h"
  
 @implementation NSOutlineView (MyExtensions)
- 
+
 // returns the first selected item
 - (id)selectedItem { return [self itemAtRow: [self selectedRow]]; }
  
 // gives all selected items
 - (NSArray*)allSelectedItems {
     NSMutableArray *items = [NSMutableArray array];
-    NSEnumerator *selectedRows = [self selectedRowEnumerator];
-    NSNumber *selRow = nil;
-    while( (selRow = [selectedRows nextObject]) ) {
-        if ([self itemAtRow:[selRow intValue]]) 
-            [items addObject: [self itemAtRow:[selRow intValue]]];
-    }
-    return items;
+    NSIndexSet *selectedRows = [self selectedRowIndexes];
+	[selectedRows enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        if ([self itemAtRow:idx]) 
+			[items addObject: [self itemAtRow:idx]];
+	}];
+	 return items;
 }
  
 // select all items in the specified array
 - (void)selectItems:(NSArray*)items byExtendingSelection:(BOOL)extend {
     unsigned int i;
-    if (extend==NO) [self deselectAll:nil];
+    if (extend==NO) 
+		[self deselectAll:nil];
+	NSMutableIndexSet * indexes = [NSIndexSet indexSet];
     for (i=0;i<[items count];i++) {
-        NSInteger row = [self rowForItem:[items objectAtIndex:i]];
-        if(row>=0) 
-			[self selectRow: row byExtendingSelection:YES];
+        NSUInteger row = [self rowForItem:[items objectAtIndex:i]];
+        if(row) {
+			[indexes addIndex:row];
+		}
     }
+	[self selectRowIndexes:indexes byExtendingSelection:extend];
 }
  
+- (void)selectItems:(NSArray*)items
+{ [self selectItems:items byExtendingSelection:NO]; }
+
+- (void)extendSelectItems:(NSArray*)items
+{ [self selectItems:items byExtendingSelection:YES]; }
+
+
 // given a row value, get the next row, and
 // wrap around to the beginning of the list
 // if specified
@@ -121,22 +131,3 @@
  
 @end
  
-@implementation NSOutlineView (MyActiveRowExtensions)
- 
- 
-@end
- 
-@implementation MyOutlineView 
- 
-- (NSDragOperation)draggingSourceOperationMaskForLocal:(BOOL)isLocal {
-    if (isLocal) return NSDragOperationEvery;
-    else return NSDragOperationCopy;
-}
- 
-- (BOOL)acceptsFirstMouse:(NSEvent *)event
-{
-    return YES;
-}
- 
- 
-@end

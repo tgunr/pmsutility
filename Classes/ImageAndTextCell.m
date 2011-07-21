@@ -127,7 +127,7 @@
         [image compositeToPoint:imageFrame.origin operation:NSCompositeSourceOver];
     }
 	
-	if( (busy == YES) )									// If the node is busy, draw a chasing arrows in the corner.
+	if( busy == YES )									// If the node is busy, draw a chasing arrows in the corner.
 	{													// Overshadow spinnerRectForBounds: to control the box
 		HIThemeChasingArrowsDrawInfo arrowInfo;
 		NSRect	spinRect = [self spinnerRectForBounds:cellFrame];

@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
 
-@interface NSArray(MyExtensions)
+@interface NSArray(PMSExtensions)
 
 -(BOOL)containsObjectIdenticalTo:(id)object;
-
 -(NSArray*)arrayOfURLsFromPaths;
 -(NSArray*)arrayOfPathsFromURLs;
 
@@ -14,17 +13,6 @@
 -(NSString*)md5String;
 
 @end	//	NSArray(MyExtensions)
-
-@interface NSMutableArray(MyExtensions)
-
--(void)insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)index;
-
--(id)reverseObjects;
-
--(id)insertUniqueObjectsFromArray:(NSArray*)newArray atIndex:(NSInteger)index;
--(id)addUniqueObjectsFromArray:(NSArray*)newArray;
-
-@end	//	NSMutableArray(MyExtensions)
 
 @interface NSDictionary(StandardDigest)
 

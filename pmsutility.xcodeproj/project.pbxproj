@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7589A71913D7F1DA0072A96F /* NSMutableArray_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7589A71713D7F1D90072A96F /* NSMutableArray_Extensions.h */; };
+		7589A71A13D7F1DA0072A96F /* NSMutableArray_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7589A71813D7F1DA0072A96F /* NSMutableArray_Extensions.m */; };
 		759D16C713A879A500E671A1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759D168913A7440700E671A1 /* Cocoa.framework */; };
 		759D16D513A879BD00E671A1 /* BTHIconResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 759D166513A7415B00E671A1 /* BTHIconResources.m */; };
 		759D16D613A879C000E671A1 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 759D166713A7415B00E671A1 /* ImageAndTextCell.m */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7589A71713D7F1D90072A96F /* NSMutableArray_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = NSMutableArray_Extensions.h; path = ../../PMSUtility/Extensions/NSMutableArray_Extensions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7589A71813D7F1DA0072A96F /* NSMutableArray_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = NSMutableArray_Extensions.m; path = ../../PMSUtility/Extensions/NSMutableArray_Extensions.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		759D165513A740DB00E671A1 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		759D165913A740DB00E671A1 /* pmsutility-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pmsutility-Info.plist"; sourceTree = "<group>"; };
 		759D165B13A740DB00E671A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -44,14 +48,14 @@
 		759D166513A7415B00E671A1 /* BTHIconResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTHIconResources.m; sourceTree = "<group>"; };
 		759D166613A7415B00E671A1 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
 		759D166713A7415B00E671A1 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
-		759D166913A7415B00E671A1 /* NSApplication_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplication_Extensions.h; sourceTree = "<group>"; };
-		759D166A13A7415B00E671A1 /* NSApplication_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_Extensions.m; sourceTree = "<group>"; };
-		759D166B13A7415B00E671A1 /* NSArray_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_Extensions.h; sourceTree = "<group>"; };
-		759D166C13A7415B00E671A1 /* NSArray_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_Extensions.m; sourceTree = "<group>"; };
+		759D166913A7415B00E671A1 /* NSApplication_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NSApplication_Extensions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		759D166A13A7415B00E671A1 /* NSApplication_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSApplication_Extensions.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		759D166B13A7415B00E671A1 /* NSArray_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NSArray_Extensions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		759D166C13A7415B00E671A1 /* NSArray_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSArray_Extensions.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		759D166D13A7415B00E671A1 /* NSData_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_Extensions.h; sourceTree = "<group>"; };
 		759D166E13A7415B00E671A1 /* NSData_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData_Extensions.m; sourceTree = "<group>"; };
-		759D166F13A7415B00E671A1 /* NSOutlineView_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOutlineView_Extensions.h; sourceTree = "<group>"; };
-		759D167013A7415B00E671A1 /* NSOutlineView_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOutlineView_Extensions.m; sourceTree = "<group>"; };
+		759D166F13A7415B00E671A1 /* NSOutlineView_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NSOutlineView_Extensions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		759D167013A7415B00E671A1 /* NSOutlineView_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSOutlineView_Extensions.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		759D167113A7415B00E671A1 /* NSSlider_Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSlider_Animation.h; sourceTree = "<group>"; };
 		759D167213A7415B00E671A1 /* NSSlider_Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSlider_Animation.m; sourceTree = "<group>"; };
 		759D167313A7415B00E671A1 /* NSString_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_Extensions.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				759D167413A7415B00E671A1 /* NSString_Extensions.m */,
 				759D167513A7415B00E671A1 /* NSViewController.h */,
 				759D167613A7415B00E671A1 /* NSViewController.m */,
+				7589A71713D7F1D90072A96F /* NSMutableArray_Extensions.h */,
+				7589A71813D7F1DA0072A96F /* NSMutableArray_Extensions.m */,
 			);
 			path = Extensions;
 			sourceTree = SOURCE_ROOT;
@@ -202,6 +208,7 @@
 				759D16EA13A879FC00E671A1 /* pms.h in Headers */,
 				759D16EB13A879FC00E671A1 /* pmsCFUtility.h in Headers */,
 				759D16EC13A879FC00E671A1 /* pmsNSUtility.h in Headers */,
+				7589A71913D7F1DA0072A96F /* NSMutableArray_Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 				759D16DE13A879D500E671A1 /* pms.m in Sources */,
 				759D16DF13A879D500E671A1 /* pmsCFUtility.c in Sources */,
 				759D16E013A879D500E671A1 /* pmsNSUtility.m in Sources */,
+				7589A71A13D7F1DA0072A96F /* NSMutableArray_Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

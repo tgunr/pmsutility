@@ -12,6 +12,8 @@
  
 - (NSArray*)allSelectedItems;
 - (void)selectItems:(NSArray*)items byExtendingSelection:(BOOL)extend;
+- (void)selectItems:(NSArray*)items;
+- (void)extendSelectItems:(NSArray*)items;
 - (unsigned long) lastSelectedRow;
 - (unsigned long) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag;
 - (unsigned long) nextSelectedRow:(int)curSelectedRow wrapOK:(BOOL)wrapFlag;
@@ -20,6 +22,3 @@
 @end
  
  
-@interface MyOutlineView : NSOutlineView 
- 
-@end

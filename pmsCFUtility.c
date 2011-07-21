@@ -441,12 +441,12 @@ CFDateRef	CFURLCopyDateCreated( CFAllocatorRef inAllocator, CFURLRef url, SInt32
 	Boolean		fileExists = FALSE;
     Boolean		isDirectory = FALSE;
 		
-    struct stat64	statBuf;
+    struct stat		statBuf;
     char			path[4096];
 	
 	if (!CFURLGetFileSystemRepresentation( url, TRUE, (uint8_t *)path, 4096)) goto BAIL;
 	
-    if (stat64(path, &statBuf) != 0)
+    if (stat(path, &statBuf) != 0)
 	{
         // stat failed, but why?
         if (errno == ENOENT) {
@@ -484,12 +484,12 @@ CFDateRef	CFURLCopyDateAccessed( CFAllocatorRef inAllocator, CFURLRef url, SInt3
 	Boolean		fileExists = FALSE;
     Boolean		isDirectory = FALSE;
 	
-    struct stat64	statBuf;
+    struct stat		statBuf;
     char			path[4096];
 	
 	if (!CFURLGetFileSystemRepresentation( url, TRUE, (uint8_t *)path, 4096)) goto BAIL;
 	
-    if (stat64(path, &statBuf) != 0)
+    if (stat(path, &statBuf) != 0)
 	{
         // stat failed, but why?
         if (errno == ENOENT) {
