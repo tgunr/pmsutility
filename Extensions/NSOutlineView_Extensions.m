@@ -7,7 +7,7 @@
 //
 #import "NSOutlineView_Extensions.h"
  
-@implementation NSOutlineView (MyExtensions)
+@implementation NSOutlineView (PMSExtensions)
 
 // returns the first selected item
 - (id)selectedItem { return [self itemAtRow: [self selectedRow]]; }

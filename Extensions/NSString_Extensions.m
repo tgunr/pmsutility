@@ -7,6 +7,7 @@
 //
 
 #import "NSString_Extensions.h"
+
 #include <openssl/evp.h>
 #include <openssl/err.h>
 
@@ -78,16 +79,17 @@
 	return [NSString stringWithFormat:@"%.02f %@", bytesLeft, [abvrArray objectAtIndex:reductionCount]];
 }
 
-@end
-
-@implementation NSString (TruncateToWidth)
-
 #define ellipsis @"…"
 
 - (NSString*)stringByTruncatingBeginningToLength:(NSUInteger)length;
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
+    
 	NSUInteger selfLength = [self length];
 	
 	// Make sure string is longer than requested length
@@ -104,7 +106,11 @@
 - (NSString*)stringByTruncatingEndToLength:(NSUInteger)length;
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
 	NSUInteger selfLength = [self length];
 
 	// Make sure string is longer than requested length
@@ -121,7 +127,11 @@
 - (NSString*)stringByTruncatingMiddleToLength:(NSUInteger)length
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
 	NSUInteger selfLength = [self length];
 	if (selfLength > length) {
 		NSRange r;		
@@ -140,7 +150,6 @@
 
 
 @implementation NSMutableString(PMExtensions)
-
 -(NSString*)md5String
 {
 	// compute an MD5 digest
@@ -160,6 +169,5 @@
 	
 	return [NSString stringWithUTF8String:hex_output];
 }
-
 @end
 

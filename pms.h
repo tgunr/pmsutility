@@ -5,7 +5,6 @@
  *  Copyright 2008 Polymicro Systems. All rights reserved.
  *
  */
-#import <Cocoa/Cocoa.h>
 
 extern Boolean			gVerbose;
 extern int				gDebugLevel;
@@ -39,4 +38,4 @@ void _PMMSG(const char *function,  int inLevel, NSString * format, ...);
 
 void PMLOGSetVerbose(Boolean value);
 void PMLOGPushVerbose(Boolean value);
-void PMLOGPopVerbose();
+void PMLOGPopVerbose(void);

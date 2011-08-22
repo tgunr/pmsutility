@@ -6,7 +6,7 @@
     Milestones:
     * 03-01-2001: Initial creation by Chuck Pisula
 
-    NSArray and NSMutableArray categories (MyExtensions).
+    NSArray and NSMutableArray categories (PMSExtensions).
 */
 
 /*
@@ -43,7 +43,6 @@
 */
 
 #import "NSArray_Extensions.h"
-#import "NSString_Extensions.h"
 #import "pmsCFUtility.h"
 #import "pmsNSUtility.h"
 
@@ -143,57 +142,6 @@
 	return [infoString md5String];
 }
 
-@end		//	NSArray(MyExtensions)
+@end		//	NSArray(PMSExtensions)
 
-@implementation NSDictionary(StandardDigest)
-
--(NSString*)md5String
-{
-	NSEnumerator*		infoEnum = [self keyEnumerator];
-	NSString*			infoKey = nil;
-	id					infoItem = nil;
-	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
-	
-	while ( (infoKey = [infoEnum nextObject]) ) {
-		infoItem = [self objectForKey:infoKey];
-		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
-			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
-		else if( CFGetTypeID((CFTypeRef)infoItem) == CFUUIDGetTypeID() )
-			[infoString appendString:[(NSString*)CFUUIDCreateString(kCFAllocatorDefault,(CFUUIDRef)infoItem) md5String]];
-		else if( CFGetTypeID((CFTypeRef)infoItem) == CFURLGetTypeID() )
-			[infoString appendString:[(NSString*)CFURLGetString((CFURLRef)infoItem) md5String]];
-		else [infoString appendString:[infoItem md5String]];
-		[infoString appendString:[infoKey md5String]];
-	}
-
-	return [infoString md5String];
-}
-
-@end
-
-@implementation NSMutableDictionary(MyExtensions)
-
--(void)addEntryFromDictionary:(NSDictionary*)otherDict forKey:(id)otherKey
-{
-	id		otherValue = [otherDict objectForKey:otherKey];
-	
-	if( otherValue != nil )
-		[self setObject:otherValue forKey:otherKey];
-}
-
-@end		//	NSMutableDictionary(MyExtensions)
-
-
-@implementation NSNumber(StandardDigest)
-
-+(NSNumber*)zero
-	{	return [NSNumber numberWithInt:0];	}
-
--(NSString*)md5String
-	{	return [[self stringValue] md5String];	}
-
--(NSNumber*)addToNumber:(NSNumber*)otherNum
-	{	return [NSNumber numberWithDouble:([self doubleValue] + [otherNum doubleValue])];	}
-
-@end		//	NSNumber(StandardDigest)
 
