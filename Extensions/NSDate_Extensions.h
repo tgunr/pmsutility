@@ -5,9 +5,8 @@
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-#ifdef PMSUTILITY
-#import <Cocoa/Cocoa.h>
-#endif
+#import <Foundation/Foundation.h>
+#import "NSString_Extensions.h"
 
 extern const	time_t	kTimeOneDayInSeconds;
 

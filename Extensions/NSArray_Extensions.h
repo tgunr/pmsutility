@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "NSString_Extensions.h"
 
 @interface NSArray(PMSExtensions)
 
@@ -14,24 +15,3 @@
 
 @end	//	NSArray(PMSExtensions)
 
-@interface NSDictionary(StandardDigest)
-
--(NSString*)md5String;
-
-@end	//	NSDictionary(StandardDigest)
-
-@interface NSMutableDictionary(PMSExtensions)
-
--(void)addEntryFromDictionary:(NSDictionary*)otherDict forKey:(id)otherKey;
-
-@end	//	NSMutableDictionary(PMSExtensions)
-
-
-@interface NSNumber(StandardDigest)
-
-+(NSNumber*)zero;
-
--(NSString*)md5String;
--(NSNumber*)addToNumber:(NSNumber*)otherNum;
-
-@end	//	NSNumber(StandardDigest)

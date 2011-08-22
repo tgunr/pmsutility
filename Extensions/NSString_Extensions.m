@@ -8,14 +8,11 @@
 
 #import "NSString_Extensions.h"
 
-#ifdef PMSUtility
 #include <openssl/evp.h>
 #include <openssl/err.h>
-#endif
 
 @implementation NSString(PMExtensions)
 
-#ifdef PMSUtility
 -(NSData*)md5Data
 {
 	// compute an MD5 digest
@@ -50,7 +47,6 @@
 	
 	return [NSString stringWithUTF8String:hex_output];
 }
-#endif
 
 -(float)rankWithString:(NSString*)other compareOptions:(NSStringCompareOptions)findOptions
 {
@@ -82,10 +78,6 @@
 	
 	return [NSString stringWithFormat:@"%.02f %@", bytesLeft, [abvrArray objectAtIndex:reductionCount]];
 }
-
-@end
-
-@implementation NSString (TruncateToWidth)
 
 #define ellipsis @"…"
 
@@ -158,9 +150,6 @@
 
 
 @implementation NSMutableString(PMExtensions)
-
-#ifdef PMSUtility
-
 -(NSString*)md5String
 {
 	// compute an MD5 digest
@@ -180,7 +169,5 @@
 	
 	return [NSString stringWithUTF8String:hex_output];
 }
-#endif
-
 @end
 
