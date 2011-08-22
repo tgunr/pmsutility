@@ -7,6 +7,11 @@
 		<key>PMSUtility.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>PMUtilityIOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>pmsutility.xcscheme</key>
@@ -28,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>759D16C513A879A500E671A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75FFF67213DDF0D6003C7786</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75FFF68013DDF0D7003C7786</key>
 		<dict>
 			<key>primary</key>
 			<true/>

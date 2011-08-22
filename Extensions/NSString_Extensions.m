@@ -7,11 +7,15 @@
 //
 
 #import "NSString_Extensions.h"
+
+#ifdef PMSUtility
 #include <openssl/evp.h>
 #include <openssl/err.h>
+#endif
 
 @implementation NSString(PMExtensions)
 
+#ifdef PMSUtility
 -(NSData*)md5Data
 {
 	// compute an MD5 digest
@@ -46,6 +50,7 @@
 	
 	return [NSString stringWithUTF8String:hex_output];
 }
+#endif
 
 -(float)rankWithString:(NSString*)other compareOptions:(NSStringCompareOptions)findOptions
 {
@@ -87,7 +92,12 @@
 - (NSString*)stringByTruncatingBeginningToLength:(NSUInteger)length;
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
+    
 	NSUInteger selfLength = [self length];
 	
 	// Make sure string is longer than requested length
@@ -104,7 +114,11 @@
 - (NSString*)stringByTruncatingEndToLength:(NSUInteger)length;
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
 	NSUInteger selfLength = [self length];
 
 	// Make sure string is longer than requested length
@@ -121,7 +135,11 @@
 - (NSString*)stringByTruncatingMiddleToLength:(NSUInteger)length
 {
 	// Create copy that will be the returned result
-	NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#ifndef CLANG_ENABLE_OBJC_ARC
+	NSMutableString *truncatedString = [self mutableCopy];
+#else
+    NSMutableString *truncatedString = [[self mutableCopy] autorelease];
+#endif
 	NSUInteger selfLength = [self length];
 	if (selfLength > length) {
 		NSRange r;		
@@ -140,6 +158,8 @@
 
 
 @implementation NSMutableString(PMExtensions)
+
+#ifdef PMSUtility
 
 -(NSString*)md5String
 {
@@ -160,6 +180,7 @@
 	
 	return [NSString stringWithUTF8String:hex_output];
 }
+#endif
 
 @end
 

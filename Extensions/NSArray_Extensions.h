@@ -12,7 +12,7 @@
 
 -(NSString*)md5String;
 
-@end	//	NSArray(MyExtensions)
+@end	//	NSArray(PMSExtensions)
 
 @interface NSDictionary(StandardDigest)
 
@@ -20,11 +20,11 @@
 
 @end	//	NSDictionary(StandardDigest)
 
-@interface NSMutableDictionary(MyExtensions)
+@interface NSMutableDictionary(PMSExtensions)
 
 -(void)addEntryFromDictionary:(NSDictionary*)otherDict forKey:(id)otherKey;
 
-@end	//	NSMutableDictionary(MyExtensions)
+@end	//	NSMutableDictionary(PMSExtensions)
 
 
 @interface NSNumber(StandardDigest)

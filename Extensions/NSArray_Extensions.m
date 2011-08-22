@@ -6,7 +6,7 @@
     Milestones:
     * 03-01-2001: Initial creation by Chuck Pisula
 
-    NSArray and NSMutableArray categories (MyExtensions).
+    NSArray and NSMutableArray categories (PMSExtensions).
 */
 
 /*
@@ -44,7 +44,7 @@
 
 #import "NSArray_Extensions.h"
 #import "NSString_Extensions.h"
-#import "pmsCFUtility.h"
+//#import "pmsCFUtility.h"
 #import "pmsNSUtility.h"
 
 @implementation NSArray (PMSExtensions)
@@ -143,7 +143,7 @@
 	return [infoString md5String];
 }
 
-@end		//	NSArray(MyExtensions)
+@end		//	NSArray(PMSExtensions)
 
 @implementation NSDictionary(StandardDigest)
 
@@ -171,7 +171,7 @@
 
 @end
 
-@implementation NSMutableDictionary(MyExtensions)
+@implementation NSMutableDictionary(PMSExtensions)
 
 -(void)addEntryFromDictionary:(NSDictionary*)otherDict forKey:(id)otherKey
 {
@@ -181,7 +181,7 @@
 		[self setObject:otherValue forKey:otherKey];
 }
 
-@end		//	NSMutableDictionary(MyExtensions)
+@end		//	NSMutableDictionary(PMSExtensions)
 
 
 @implementation NSNumber(StandardDigest)
