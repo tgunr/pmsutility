@@ -6,20 +6,19 @@
  *
  */
 
-
 #include <stdio.h>
 #include <stdarg.h>
 #include <sys/time.h>
 #include "pms.h"
 
 int				gDebugLevel = 1;
-Boolean			gVerbose = TRUE;
 int				gVerboseIndex = 0;
 Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
 
 // PMLOGSetVerbose sets a new debug level
-void PMLOGSetVerbose(Boolean value) { gDebugLevel = value; }
+void PMLOGSetVerbose(Boolean value) 
+    { gDebugLevel = value; }
 
 // PMLOGPushVerbose sets a new debug setting and saves the previous one
 // Use this to reduce debug output inside loops etc.
@@ -88,7 +87,7 @@ void _PMLOG(const char *file, const char *function,  int inLevel, NSString * for
 		// The level is not high enough to be displayed, we're skipping this item.
 		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
 		// gDebugLevel = 1 = least verbose PMLOG(1, @"Routine log");
-		// gDebugLevel = 7 = most verbose  PMLOG(5, @"Really detailed debug level");
+		// gDebugLevel = 7 = most verbose  PMLOG(7, @"Really detailed debug level");
         return;
     }
     else
