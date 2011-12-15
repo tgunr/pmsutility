@@ -31,7 +31,6 @@
 		7597A83F13E7054E005613AE /* NSNumber_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7597A83C13E7054E005613AE /* NSNumber_Extensions.h */; };
 		7597A84013E7054E005613AE /* NSNumber_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597A83D13E7054E005613AE /* NSNumber_Extensions.m */; };
 		7597A84113E7054E005613AE /* NSNumber_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597A83D13E7054E005613AE /* NSNumber_Extensions.m */; };
-		7597A86613E728D9005613AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7597A86513E728D9005613AE /* Cocoa.framework */; };
 		759D16E113A879FC00E671A1 /* BTHIconResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 759D166413A7415B00E671A1 /* BTHIconResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		759D16E213A879FC00E671A1 /* ImageAndTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 759D166613A7415B00E671A1 /* ImageAndTextCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		759D16E313A879FC00E671A1 /* NSApplication_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 759D166913A7415B00E671A1 /* NSApplication_Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,11 +44,10 @@
 		759D16EB13A879FC00E671A1 /* pmsCFUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 759D167A13A7415B00E671A1 /* pmsCFUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		759D16EC13A879FC00E671A1 /* pmsNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 759D167B13A7415B00E671A1 /* pmsNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		759D16ED13A87A0600E671A1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759D168B13A7461900E671A1 /* Carbon.framework */; };
+		75AEF08D14898C45001D62E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AEF08C14898C45001D62E4 /* Cocoa.framework */; };
 		75FFF67513DDF0D7003C7786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF67413DDF0D7003C7786 /* Foundation.framework */; };
 		75FFF68313DDF0D7003C7786 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF68213DDF0D7003C7786 /* SenTestingKit.framework */; };
-		75FFF68513DDF0D7003C7786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF68413DDF0D7003C7786 /* UIKit.framework */; };
 		75FFF68613DDF0D7003C7786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF67413DDF0D7003C7786 /* Foundation.framework */; };
-		75FFF68813DDF0D7003C7786 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF68713DDF0D7003C7786 /* CoreGraphics.framework */; };
 		75FFF68B13DDF0D7003C7786 /* libPMUtilityIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFF67313DDF0D6003C7786 /* libPMUtilityIOS.a */; };
 		75FFF69113DDF0D8003C7786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75FFF68F13DDF0D8003C7786 /* InfoPlist.strings */; };
 		75FFF69313DDF0D8003C7786 /* PMUtilityIOSTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 75FFF69213DDF0D8003C7786 /* PMUtilityIOSTests.h */; };
@@ -80,9 +78,8 @@
 		7597A83713E70460005613AE /* NSDictionary_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_Extensions.m; sourceTree = "<group>"; };
 		7597A83C13E7054E005613AE /* NSNumber_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumber_Extensions.h; sourceTree = "<group>"; };
 		7597A83D13E7054E005613AE /* NSNumber_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumber_Extensions.m; sourceTree = "<group>"; };
-		7597A86513E728D9005613AE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		759D165513A740DB00E671A1 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		759D165913A740DB00E671A1 /* pmsutility-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pmsutility-Info.plist"; sourceTree = "<group>"; };
+		759D165913A740DB00E671A1 /* PMSUtility-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMSUtility-Info.plist"; sourceTree = "<group>"; };
 		759D165B13A740DB00E671A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		759D165D13A740DB00E671A1 /* pmsutility-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pmsutility-Prefix.pch"; sourceTree = "<group>"; };
 		759D166413A7415B00E671A1 /* BTHIconResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHIconResources.h; sourceTree = "<group>"; };
@@ -109,13 +106,14 @@
 		759D167A13A7415B00E671A1 /* pmsCFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmsCFUtility.h; sourceTree = "<group>"; };
 		759D167B13A7415B00E671A1 /* pmsNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmsNSUtility.h; sourceTree = "<group>"; };
 		759D167C13A7415B00E671A1 /* pmsNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmsNSUtility.m; sourceTree = "<group>"; };
-		759D168913A7440700E671A1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		759D168B13A7461900E671A1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		759D168D13A746C700E671A1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		759D169C13A877AD00E671A1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		759D169D13A877AD00E671A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		759D169E13A877AD00E671A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		759D16C613A879A500E671A1 /* PMSUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMSUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75AEF08C14898C45001D62E4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		75BFC8BF14993AD50085EE2E /* pmsDACALUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = pmsDACALUtility.m; path = ../PickADisk/Sources/pmssource/Classes/pmsDACALUtility.m; sourceTree = "<group>"; };
 		75FFF67313DDF0D6003C7786 /* libPMUtilityIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPMUtilityIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFF67413DDF0D7003C7786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75FFF67813DDF0D7003C7786 /* PMUtilityIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMUtilityIOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -123,8 +121,6 @@
 		75FFF67A13DDF0D7003C7786 /* PMUtilityIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUtilityIOS.m; sourceTree = "<group>"; };
 		75FFF68113DDF0D7003C7786 /* PMUtilityIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMUtilityIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFF68213DDF0D7003C7786 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		75FFF68413DDF0D7003C7786 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		75FFF68713DDF0D7003C7786 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		75FFF68E13DDF0D7003C7786 /* PMUtilityIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUtilityIOSTests-Info.plist"; sourceTree = "<group>"; };
 		75FFF69013DDF0D8003C7786 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75FFF69213DDF0D8003C7786 /* PMUtilityIOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMUtilityIOSTests.h; sourceTree = "<group>"; };
@@ -136,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7597A86613E728D9005613AE /* Cocoa.framework in Frameworks */,
+				75AEF08D14898C45001D62E4 /* Cocoa.framework in Frameworks */,
 				759D16ED13A87A0600E671A1 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,9 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FFF68313DDF0D7003C7786 /* SenTestingKit.framework in Frameworks */,
-				75FFF68513DDF0D7003C7786 /* UIKit.framework in Frameworks */,
 				75FFF68613DDF0D7003C7786 /* Foundation.framework in Frameworks */,
-				75FFF68813DDF0D7003C7786 /* CoreGraphics.framework in Frameworks */,
 				75FFF68B13DDF0D7003C7786 /* libPMUtilityIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +161,7 @@
 		759D164713A740DA00E671A1 = {
 			isa = PBXGroup;
 			children = (
-				7597A86513E728D9005613AE /* Cocoa.framework */,
+				75BFC8BF14993AD50085EE2E /* pmsDACALUtility.m */,
 				759D165713A740DB00E671A1 /* pmsutility */,
 				75FFF67613DDF0D7003C7786 /* PMUtilityIOS */,
 				75FFF68C13DDF0D7003C7786 /* PMUtilityIOSTests */,
@@ -189,14 +183,12 @@
 		759D165413A740DB00E671A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75AEF08C14898C45001D62E4 /* Cocoa.framework */,
 				759D168D13A746C700E671A1 /* Security.framework */,
 				759D168B13A7461900E671A1 /* Carbon.framework */,
-				759D168913A7440700E671A1 /* Cocoa.framework */,
 				759D165513A740DB00E671A1 /* CoreFoundation.framework */,
 				75FFF67413DDF0D7003C7786 /* Foundation.framework */,
 				75FFF68213DDF0D7003C7786 /* SenTestingKit.framework */,
-				75FFF68413DDF0D7003C7786 /* UIKit.framework */,
-				75FFF68713DDF0D7003C7786 /* CoreGraphics.framework */,
 				759D169B13A877AD00E671A1 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -221,7 +213,7 @@
 		759D165813A740DB00E671A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				759D165913A740DB00E671A1 /* pmsutility-Info.plist */,
+				759D165913A740DB00E671A1 /* PMSUtility-Info.plist */,
 				759D165A13A740DB00E671A1 /* InfoPlist.strings */,
 				759D165D13A740DB00E671A1 /* pmsutility-Prefix.pch */,
 			);
@@ -549,33 +541,39 @@
 		759D165E13A740DB00E671A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					x86_64,
+					i386,
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pmsutility-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "PMSUtility-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lcrypto";
-				SDKROOT = "";
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		759D165F13A740DB00E671A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					x86_64,
+					i386,
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pmsutility-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -583,7 +581,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lcrypto";
-				SDKROOT = "";
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
@@ -591,7 +589,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -604,9 +601,7 @@
 					PMSUTILITY,
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -615,9 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -627,7 +620,6 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
