@@ -52,7 +52,7 @@
 //        result.size =  NSMakeSize( 16.0, 16.0 );
         result.origin = cellFrame.origin;
         result.origin.x += DACIATCImageIndent;
-        result.origin.y += ceil((cellFrame.size.height - result.size.height) / 2);
+        result.origin.y += (CGFloat)ceil(((float)cellFrame.size.height - (float)result.size.height) / 2.0f);
     } else {
         result = NSZeroRect;
     }
@@ -78,9 +78,9 @@
 
     NSRect result;
 
-	CGFloat spinSize = 16.0;		// Should probably not be hard coded...
-	CGFloat spinXInset = 8.0;
-	CGFloat spinYInset = 0.0;
+	CGFloat spinSize = 16.0f;		// Should probably not be hard coded...
+	CGFloat spinXInset = 8.0f;
+	CGFloat spinYInset = 0.0f;
 	CGFloat cellWidth = cellFrame.size.width;
 	CGFloat cellHeight = cellFrame.size.height;
 	
@@ -120,9 +120,9 @@
         imageFrame.size = imageSize;
 
         if ([controlView isFlipped])
-            imageFrame.origin.y += ceil((cellFrame.size.height + imageFrame.size.height) / 2);
+            imageFrame.origin.y += (CGFloat)ceil(((float)cellFrame.size.height + (float)imageFrame.size.height) / 2);
         else
-            imageFrame.origin.y += ceil((cellFrame.size.height - imageFrame.size.height) / 2);
+            imageFrame.origin.y += (CGFloat)ceil(((float)cellFrame.size.height - (float)imageFrame.size.height) / 2);
 
         [image compositeToPoint:imageFrame.origin operation:NSCompositeSourceOver];
     }

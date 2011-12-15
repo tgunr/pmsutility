@@ -18,7 +18,7 @@
 	return [NSColor colorWithCalibratedRed: (float)rgbColor.red / (float)SHRT_MAX
 									 green: (float)rgbColor.green / (float)SHRT_MAX
 									  blue: (float)rgbColor.blue / (float)SHRT_MAX
-								     alpha:1.0];
+								     alpha:(float)1.0];
 }
 
 - (RGBColor) approximateRGBColor {
@@ -40,7 +40,7 @@
 @implementation NSBitmapImageRep (IconRef)
 
 - (id)initWithIconRef:(IconRef) icon {
-	return [self initWithIconRef:icon width:128.0 height:128.0];
+	return [self initWithIconRef:icon width:(float)128.0 height:(float)128.0];
 }
 
 - (id)initWithIconRef:(IconRef) icon width: (float) iconWidth height: (float) iconHeight {

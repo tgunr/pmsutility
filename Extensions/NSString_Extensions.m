@@ -50,13 +50,15 @@
 
 -(float)rankWithString:(NSString*)other compareOptions:(NSStringCompareOptions)findOptions
 {
-	float		rank = 0.0;
+	float		rank = (float)0.0;
 	NSRange		foundRange;
 	
-	if( [self localizedCaseInsensitiveCompare:other] == NSOrderedSame ) rank = 1.0;
+	if( [self localizedCaseInsensitiveCompare:other] == NSOrderedSame ) 
+        rank = (float)1.0;
 	else {
 		foundRange = [self rangeOfString:other options:findOptions];
-		if( foundRange.length != 0 ) rank = (foundRange.length*1.0) / ([self length]*1.0);
+		if( foundRange.length != 0 ) 
+            rank = (float)(foundRange.length  / [self length] );
 	}
 
 	// NSLog(@"Rank:%f String:%@ Other:%@", rank, self, other);

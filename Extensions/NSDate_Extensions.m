@@ -9,7 +9,7 @@
 #import "pmsCFUtility.h"
 #import "pmsNSUtility.h"
 
-const	time_t	kTimeOneDayInSeconds = 86400.0;
+const	time_t	kTimeOneDayInSeconds = 86400.0f;
 
 @implementation NSDate(PMSExtensions)
 
@@ -90,7 +90,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0;
 	CFAbsoluteTime  distantTime = (ourDate!=NULL) ? CFDateGetAbsoluteTime(ourDate) : 0.0;
 	CFAbsoluteTime	anchorTime = 0.0;
 	CFAbsoluteTime	limitTime = 0.0;
-	float			rank = 0.0;
+	float			rank = 0.0f;
 	NSString*		whichKind = nil;
 	
 	whichKind = (NSString*)[options objectForKey:@"Range"];
@@ -111,8 +111,9 @@ const	time_t	kTimeOneDayInSeconds = 86400.0;
 			
 			//timeBetween = CFDateGetTimeIntervalSinceDate( ourDate, otherDate );
 			if( CFAbsoluteTimeBetweenTimes( limitTime, distantTime, anchorTime ) )
-				rank = (anchorTime-distantTime)/daySeconds;
-			if( rank < 0.0 ) rank = -rank;
+				rank = ((float)anchorTime-(float)distantTime)/(float)daySeconds;
+			if( rank < 0.0f ) 
+                rank = -rank;
 		}
 	}	
 	

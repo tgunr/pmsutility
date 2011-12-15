@@ -10,7 +10,7 @@
 float easeFunction(float t);
 
 const float sliderAnimationInterval = 1/20;  // This is basically the "frame rate" for animating sliders.
-const float sliderAnimationSeconds = 0.8; 	// This is how long sliders should take to get where they're going.  A second seemed like a good start.
+const float sliderAnimationSeconds = 0.8f; 	// This is how long sliders should take to get where they're going.  A second seemed like a good start.
 
 static NSString *endValueKey = @"endValue", *startValueKey = @"startValue", *startDateKey = @"startDate", *stopOnTicksKey = @"ticksOnly";
 
@@ -117,7 +117,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
   endValue = [[parms valueForKey:endValueKey] floatValue];
   startValue = [[parms valueForKey:startValueKey] floatValue];
 	  
-  t = MIN(1.0 , fabs([[parms valueForKey:startDateKey] timeIntervalSinceNow]) / sliderAnimationSeconds);  //Looking for a value from zero to one..
+  t = (float)MIN(1.0f , fabs([[parms valueForKey:startDateKey] timeIntervalSinceNow]) / sliderAnimationSeconds);  //Looking for a value from zero to one..
   t = easeFunction(t);  // comment this out to make it linear.
 
   currentValue = startValue + (t * (endValue - startValue));
@@ -167,7 +167,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 
 float easeFunction(float t)  // This function implements a sinusoidal ease-in/ease-out for t = 0 to 1.0.  T is scaled to represent the interval of one full period of the sine function, and transposed to lie above the X axis.
 	{
-   return (sin((t * M_PI) - M_PI_2) + 1.0 ) / 2.0;
+   return (float)(sin((t * M_PI) - M_PI_2) + 1.0f ) / 2.0f;
 	} 
 
 /*

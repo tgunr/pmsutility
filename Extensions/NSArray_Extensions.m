@@ -117,9 +117,9 @@
 -(id)randomObject
 {
 	id			outObject = nil;
-	float		randFloat = ( random() / (pow(2, 31) - 1) );
+	float		randFloat = (float)( random() / (pow(2, 31) - 1) );
 	NSInteger	selfCount = [self count];
-	NSInteger	randIndex = randFloat * selfCount;
+	NSInteger	randIndex = (NSInteger)(randFloat * (float)selfCount);
 	
 	if( randIndex == selfCount )
 		randIndex--;
