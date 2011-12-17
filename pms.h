@@ -5,6 +5,7 @@
  *  Copyright 2008 Polymicro Systems. All rights reserved.
  *
  */
+#import <Foundation/Foundation.h>
 
 extern Boolean			gVerbose;
 extern int				gDebugLevel;

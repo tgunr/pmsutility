@@ -538,6 +538,104 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		751B6F88149C071F003AD678 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pmsutility-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PMSUtility-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lcrypto";
+				SDKROOT = macosx10.6;
+			};
+			name = Development;
+		};
+		751B6F89149C071F003AD678 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					PMSUTILITY,
+				);
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Development;
+		};
+		751B6F8A149C071F003AD678 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/PMUtilityIOS.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PMUtilityIOS/PMUtilityIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					PMSUTILITYIOS,
+				);
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos5.0;
+				SKIP_INSTALL = YES;
+			};
+			name = Development;
+		};
+		751B6F8B149C071F003AD678 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PMUtilityIOS/PMUtilityIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PMSUTILITYIOS,
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "PMUtilityIOSTests/PMUtilityIOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Development;
+		};
 		759D165E13A740DB00E671A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -728,6 +826,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				759D165E13A740DB00E671A1 /* Debug */,
+				751B6F88149C071F003AD678 /* Development */,
 				759D165F13A740DB00E671A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -737,6 +836,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				759D16D013A879A500E671A1 /* Debug */,
+				751B6F89149C071F003AD678 /* Development */,
 				759D16D113A879A500E671A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -746,6 +846,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75FFF69713DDF0D8003C7786 /* Debug */,
+				751B6F8A149C071F003AD678 /* Development */,
 				75FFF69813DDF0D8003C7786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -755,6 +856,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75FFF69A13DDF0D8003C7786 /* Debug */,
+				751B6F8B149C071F003AD678 /* Development */,
 				75FFF69B13DDF0D8003C7786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
