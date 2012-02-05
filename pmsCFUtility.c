@@ -316,8 +316,11 @@ char*			CFStringCreateCString( CFStringRef theString, CFStringEncoding theEncodi
 	
 	maxlen = CFStringGetMaximumSizeForEncoding( CFStringGetLength( theString ), theEncoding ) + 1;
 	cstring = (char*)calloc( 1, maxlen );
-	if( cstring != NULL ) goodCoerce = CFStringGetCString(theString, cstring, maxlen, theEncoding);
+	if( cstring != NULL ) 
+        goodCoerce = CFStringGetCString(theString, cstring, maxlen, theEncoding);
 	if( !goodCoerce & (cstring != NULL) ) {
+        printf("CFStringCreateCString error - fail to coerce: ");
+        CFShow(theString);
 		free( cstring );
 		cstring = NULL;
 	}
